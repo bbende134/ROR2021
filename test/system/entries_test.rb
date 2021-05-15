@@ -7,7 +7,7 @@ class EntriesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit entries_url
-    assert_selector "h1", text: "Étrend - #{DateTime.now.to_s(:nice_date)}"
+    assert_selector text: "Étrend - #{DateTime.now.to_s(:nice_date)}"
   end
 
   test "creating a Entry" do
@@ -34,7 +34,7 @@ class EntriesTest < ApplicationSystemTestCase
     fill_in "Fats", with: @entry.fats
     fill_in "Meal type", with: @entry.meal_type
     fill_in "Proteins", with: @entry.proteins
-    click_on "Update Entry"
+    click_on "Étkezés frissítése"
 
     assert_text "Entry was successfully updated"
     
