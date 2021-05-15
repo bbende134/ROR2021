@@ -1,0 +1,59 @@
+<div class="columns is-centered">
+    <div class="column is-half">
+        <% @entries.each do |day, entries| %>
+            <h3 class="is-size-5 has-text-centered mb-4"> Ételek ezen a napon: <%= day%></h3>
+
+            <nav class="level is-mobile" >
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading"> Kalóriák </p>
+                    <p class="title"> <%= entries.pluck(:calories).sum %>kcal
+                    
+                    </p>
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading"> Fehérje bevitel </p>
+                    <p class="title"> <%= entries.pluck(:proteins).sum %>g
+                    
+                    </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading"> Szénhidrát bevitel </p>
+                    <p class="title"> <%= entries.pluck(:carbohydrates).sum %>g
+                    
+                    </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                    <p class="heading"> Zsír bevitel </p>
+                    <p class="title"> <%= entries.pluck(:fats).sum %>g
+                    
+                    </p>
+                    </div>
+                </div>
+            </nav>
+
+
+            <% entries.each do |entry| %>
+                <%= link_to entry_path(entry) do %>
+                    <div class="card">
+                        <div class="card-content">
+                            <strong><%= entry.meal_type %></strong><br/>
+                            <%= entry.calories %> kalóriák
+                            <%= entry.proteins %> (g) fehérjék
+                            <%= entry.carbohydrates %> (g) szénhidrát
+                            <%= entry.calories %> (g) zsír
+                        </div>
+                    </div>
+                <%end%>
+            <%end%>
+        <% end %>
+
+    </div>
+</div>

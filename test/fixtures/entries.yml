@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+reggeli:
+  meal_type: "Gyors reggeli"
+  calories: 200
+  proteins: 20
+  carbohydrates: 40
+  fats: 10
+
+vacsora:
+  meal_type: "Vacsora"
+  calories: 700
+  proteins: 20
+  carbohydrates: 40
+  fats: 30

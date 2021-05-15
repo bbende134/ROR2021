@@ -1,0 +1,36 @@
+
+<% content_for :title do %>
+  Étrend &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<%end%>
+
+
+
+  <div class="columns mt-5 is-left">
+    <% @entries.each do |entry| %>
+      <div class="column is-one-third">
+        <div class="card">
+          <header>
+            <p class="card-header-title"><%= entry.meal_type %></p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p><span><%= entry.calories %></span>  kalóriák</p>
+              <p><span><%= entry.proteins %></span>  fehérjék (g)</p>
+              <p><span><%= entry.carbohydrates %></span>  szénhidrát (g)</p>
+              <p><span><%= entry.fats %></span>  zsírok (g)</p>
+              <p>Rögzítve: <%= time_ago_in_words(entry.created_at) %> ezelőtt</p>
+            </div>
+          </div>
+        
+        
+        <%= link_to 'Mutasd', entry %>
+        <%= link_to 'Szerkeztés', edit_entry_path(entry) %>
+        <%= link_to 'Törlés', entry, method: :delete, data: { confirm: 'Biztosan szeretnéd törölni?' } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<div class="columns is-left">
+  <%= link_to "Mutasd az összes ételt", archives_index_path %>
+</div>
