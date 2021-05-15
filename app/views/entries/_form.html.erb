@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :meal_type, class: "label"  %>
-    <%= form.text_field :meal_type, class: "input"  %>
+    Étkezés típusa 
+    <%= form.text_field :meal_type, class: "input", placeholder: "reggeli, ebéd, stb..."  %>
   </div>
 
   <div class="field">
-    <%= form.label :calories, class: "label"  %>
-    <%= form.number_field :calories, class: "input"  %>
+    Kalória
+    <%= form.number_field :calories, class: "input", placeholder: "kcal"  %>
   </div>
 
   <div class="field">
-    <%= form.label :proteins , class: "label" %>
-    <%= form.number_field :proteins, class: "input"  %>
+    Fehérje
+    <%= form.number_field :proteins, class: "input", placeholder: "g"  %>
   </div>
 
   <div class="field">
-    <%= form.label :carbohydrates, class: "label"  %>
-    <%= form.number_field :carbohydrates, class: "input"  %>
+    Szénhidrát
+    <%= form.number_field :carbohydrates, class: "input", placeholder: "g"  %>
   </div>
 
   <div class="field">
-    <%= form.label :fats, class: "label"  %>
-    <%= form.number_field :fats, class: "input"  %>
+    Zsír
+    <%= form.number_field :fats, class: "input", placeholder: "g"  %>
   </div>
 
   <div class="actions">
-    <%= form.submit class: "button is-link" %>
+    <%= form.submit class: "button is-default" %>
   </div>
 <% end %>

@@ -1,7 +1,22 @@
 
 <section class="hero is-warning is-small">
   <!-- Hero head: will stick at the top -->
-  <div class="hero-head">
+  
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-left">
+      <p class="title">
+        <% if content_for(:title) %>
+            <%= yield :title %>
+        <% else %>
+            Étrend
+        <% end %>
+      </p>
+      
+    </div>
+  </div>
+<div class="hero-head">
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
@@ -9,6 +24,10 @@
 
           <span class="has-text-weight-bold"> Étrend </span>
           <%end%>
+          <%= link_to archives_index_path, class: "navbar-item" do %>
+            <span class="has-text-weight-bold"> Mutasd az összes ma bevitt ételt </span>
+          <%end%>
+           
           <span class="navbar-burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
@@ -22,26 +41,12 @@
             <%= link_to new_entry_path, class:"button is-success" do%>
                 <span> Új étel hozzáadása</span>
             <% end %>
+            
             </span>
           </div>
         </div>
       </div>
     </nav>
   </div>
-
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <p class="title">
-        <% if content_for(:title) %>
-            <%= yield :title %>
-        <% else %>
-            Étrend
-        <% end %>
-      </p>
-      
-    </div>
-  </div>
-
  
 </section>
